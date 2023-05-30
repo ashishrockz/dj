@@ -1,0 +1,2 @@
+# dj
+Django New app
