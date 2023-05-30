@@ -1,0 +1,61 @@
+{% load static  %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>  Contact Us</title>
+<link rel="stylesheet" href="{% static 'contactus.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">K L Deemed to be University</div>
+          <div class="text-two">VADESWARAM</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">0866 - 3500122</div>
+          <div class="text-two">08645 - 350200</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">vc@kluniversity.in</div>
+          <div class="text-two">venkatram@kluniversity.in
+        </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>If you have any issues with our news portal, you can send me message from here. It's my pleasure to help you.</p>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Enter your email"required>
+        </div>
+        <div class="input-box message-box">
+            <input type="text" placeholder="Enter massage">
+        </div>
+        <button class="button" type="submit" style="display: inline-block;margin-top: 12px; color: #fff;font-size: 18px;outline: none;border: none;padding: 8px 16px;border-radius: 6px; background: #3e2093;cursor: pointer;transition: all 0.3s ease;">send</button>
+
+        <div class="goback">
+            <span class="text"><tr></tr>GO to
+                <a href="index.html" class="text login-link">Main page</a>
+            </span>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
