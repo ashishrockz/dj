@@ -1,4 +1,5 @@
 # accounts/views.py
+from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,6 +10,8 @@ from .serializers import UserSerializer, LoginSerializer, ProductSerializer, Ord
 from .models import User, Product, Order
 
 class RegisterView(APIView):
+    def get(self, request):
+        return HttpResponse("hello")
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
