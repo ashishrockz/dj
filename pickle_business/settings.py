@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-4#v#@9l=%rrbgc-ac@e^=611-x_b+k-&zb$i21ng2b-&&+z3uw')
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
-ALLOWED_HOSTS = ['*', '.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['*', '.vercel.app', '.now.sh',".onrender.com"]
 
 # Application definition
 INSTALLED_APPS = [
