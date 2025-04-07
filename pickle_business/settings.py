@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'accounts',
     'cloudinary',
     'cloudinary_storage',
+    'corsheaders',
 ]
 
 CLOUDINARY_STORAGE = {
@@ -34,8 +35,12 @@ CLOUDINARY_STORAGE = {
     'API_KEY': os.environ.get('CLOUDINARY_API_KEY', '132426531318371'),
     'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', 'qTQgV3KCcKcq5Wyfwb3MH3YuAuI'),
 }
-
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://your-frontend-domain.com",
+]
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
