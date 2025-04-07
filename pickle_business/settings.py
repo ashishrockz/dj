@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-4#v#@9l=%rrbgc-ac@e^=611-x_b+k-&zb$i21ng2b-&&+z3uw')
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
-ALLOWED_HOSTS = ['*', '.vercel.app', '.now.sh',".onrender.com"]
+ALLOWED_HOSTS = ['*', 'lakshmihomefoods.vercel.app', '.now.sh',".onrender.com"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -37,7 +37,7 @@ CLOUDINARY_STORAGE = {
 }
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://your-frontend-domain.com",
+    "https://adminlakshmihomefood.vercel.app",
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -60,7 +60,10 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
-
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # Add custom backend if any
+]
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),

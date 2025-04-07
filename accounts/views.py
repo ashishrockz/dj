@@ -19,14 +19,16 @@ class RegisterView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+# accounts/views.py
 class LoginView(APIView):
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid():
-            user = authenticate(
-                username=serializer.validated_data['username'],
-                password=serializer.validated_data['password']
-            )
+            username = serializer.validated_data['username']
+            password = serializer.validated_data['password']
+            print(f"Attempting to authenticate: {username}")  # Debug
+            user = authenticate(request, username=username, password=password)
+            print(f"Authenticated user: {user}")  # Debug
             if user:
                 refresh = RefreshToken.for_user(user)
                 return Response({
