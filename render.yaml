@@ -1,0 +1,21 @@
+services:
+- type: web
+  name: pickle-business-backend
+  env: python
+  buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+  startCommand: "gunicorn pickle_business.wsgi:application"
+  envVars:
+    - key: SECRET_KEY
+      value: your-secure-key-here
+    - key: DJANGO_SETTINGS_MODULE
+      value: pickle_business.settings
+    - key: ALLOWED_HOSTS
+      value: pickle-business-backend.onrender.com
+    - key: CLOUDINARY_CLOUD_NAME
+      value: dyqmr5gxd
+    - key: CLOUDINARY_API_KEY
+      value: 132426531318371
+    - key: CLOUDINARY_API_SECRET
+      value: qTQgV3KCcKcq5Wyfwb3MH3YuAuI
+    - key: PYTHON_VERSION
+      value: 3.11
