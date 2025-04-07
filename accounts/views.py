@@ -11,7 +11,7 @@ from .models import User, Product, Order
 
 class RegisterView(APIView):
     def get(self, request):
-        return HttpResponse("hello")
+        return HttpResponse("hello welcome to home foods")
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
