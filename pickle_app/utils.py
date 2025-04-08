@@ -3,6 +3,8 @@ import random
 import string
 from django.utils.text import slugify
 
+from pickle_app import models
+
 def generate_unique_slug(instance, field_name, new_slug=None):
     """
     Generate a unique slug for a model instance.
