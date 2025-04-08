@@ -14,9 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-4#v#@9l=%rrbgc-ac@e^=611-x_b+k-&zb$i21ng2b-&&+z3uw')
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
-ALLOWED_HOSTS = ['*', 'lakshmihomefoods.vercel.app', '.now.sh', '.onrender.com']
-
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']  # Replace wildcard with specific hosts
+DEBUG = False  # Ensure DEBUG is False in production
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
